@@ -1,0 +1,109 @@
+body {
+    background-color: whitesmoke;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    background-size: cover;
+    height: 100%;
+  }
+  .container {
+    height: 100%;
+    margin: 0 auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-position: center; /* set the height to 100% of the viewport height */
+    display: flex;
+    background-size: cover;
+    flex-direction: column;
+    justify-content: center; /* center the content vertically */
+  }
+  
+  .header {
+    background-color: black;
+    color: white;
+    text-align: center;
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  
+  .header-nav {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .header-title {
+    font-size: 3rem;
+    margin: 0;
+    line-height: 1.1;
+    display: flex;
+    align-items: center;
+  }
+  
+  .header-title span:first-child {
+    color: #ffc107;
+  }
+  
+  .header-subtitle {
+    font-size: 1.2rem;
+    font-weight: normal;
+    margin: 10px 0 0;
+  }
+  
+  .styled-table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 60px;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    min-width: 400px;
+    align-items: center;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  }
+  
+  .styled-table thead tr {
+    background-color: black;
+    color: #ffffff;
+    text-align: left;
+  }
+  
+  .styled-table th,
+  .styled-table td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #dddddd;
+  }
+  
+  .styled-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+  }
+  
+  .styled-table tbody tr:last-of-type {
+    border-bottom: 2px solid #009879;
+  }
+  
+  .styled-table tbody tr.active-row {
+    font-weight: bold;
+    color: #009879;
+  }
+  
+  .styled-table td {
+    background-color: #dddddd;
+  }
+  
+  td {
+    padding: 10px;
+  }
+  
+  .positioned {
+    position: absolute;
+    left: 10;
+    top: 30%;
+    transform: translateY(-50%);
+    background-color:#ffc107;
+    color: #fff;
+    padding: 10px;
+  }

@@ -1,0 +1,57 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+    background-image: url("https://static.standard.co.uk/2022/11/16/10/netflix-s.jpg?width=1200");
+}
+
+.container {
+    text-align: center;
+    background-color: black;
+    padding: 40px 20px 20px 30px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 500px;
+    margin: 0 auto;
+}
+
+h1 {
+    color: rgb(176, 0, 0);
+    font-size:xx-large;
+    
+}
+
+.form-group {
+    margin-bottom: 1px;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+label {
+    color: white;
+    margin-bottom: 5px;
+}
+
+input[type="text"], input[type="date"], input[type="file"], textarea {
+    width: 100%;
+    padding: 1px 1px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    text-emphasis-color: white;
+}
+
+button[type="submit"] {
+    background-color: rgb(223, 125, 125);
+    color: white;
+    border: none;
+    padding: 15px 30px; 
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}

@@ -1,0 +1,55 @@
+<body>
+  <div class="container">
+    <h1>View Movie Data</h1>
+  
+    <a href="#" routerLink="/post/index" class="btn btn-primary">Back</a>
+  
+
+  
+    <div>
+      <strong>Movie Name:</strong>
+      <p>{{ post.movieName }}</p>
+    </div>
+  
+    <div>
+      <strong>Cast:</strong>
+      <p>{{ post.cast }}</p>
+    </div>
+  
+    <div>
+      <strong>Director:</strong>
+      <p>{{ post.director }}</p>
+    </div>
+  
+    <div>
+      <strong>Release Date:</strong>
+      <p>{{ post.releaseDate }}</p>
+    </div>
+  
+    <div>
+      <strong>Duration:</strong>
+      <p>{{ post.duration }}</p>
+    </div>
+  
+    <div>
+      <strong>Songs:</strong>
+      <p>{{ post.songs }}</p>
+    </div>
+  
+    <!--<div>
+        <strong>Poster:</strong>
+        <img [src]="postService.getPosterUrl(post.poster)" alt="Poster" width="200">
+    </div>-->
+  
+    <div>
+      <strong>Genre:</strong>
+      <p>{{ post.genre }}</p>
+    </div>
+
+    <div>
+        <strong>Description:</strong>
+        <p>{{ post.description }}</p>
+    </div>
+  
+  </div>
+</body>

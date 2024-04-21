@@ -1,0 +1,55 @@
+<body>
+  <div class="container">
+   <header class="header">
+    <nav class="w-full flex  items-center p-5 bg-black header-nav">
+      <div class="logo">
+        <h1 class="text-gray-200 text-4xl flex justify-start items-center header-title">
+          <span class="text-yellow-400">Movie</span>
+          <span>Mania</span>
+        </h1>
+        <div class="nav-items">
+          <span><p class="text-gray-300 text-lg header-subtitle">Your one-stop destination for all movies</p></span>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <div class="con">
+    <span class="positioned" style="margin-right: 10px;"><a href="#" routerLink="/post/create/" class="btn btn-success"><i class="fa fa-plus" aria-hidden="true"></i>Add Movie</a></span>
+</div> 
+    <table class="styled-table">
+      <thead>
+        <tr>
+          <th>Movie Name</th>
+          <th>Cast</th>
+          <th>Director</th>
+          <th>Release Date</th>
+          <th>Duration</th>
+          <th>Songs</th>
+          <!--<th>Poster</th>-->
+          <th>Genre</th>
+          <th>Description</th>
+          <th>View</th>
+          <th>Edit</th>
+          <th>Delete</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let movie of posts">
+          <td>{{ movie.movieName }}</td>
+          <td>{{ movie.cast }}</td>
+          <td>{{ movie.director }}</td>
+          <td>{{ movie.releaseDate }}</td>
+          <td>{{ movie.duration }}</td>
+          <td>{{ movie.songs }}</td>
+          <!--<td><img src="{{ postService.getPosterUrl(movie.poster) }}" alt="Poster" width="100"></td>-->
+          <td>{{ movie.genre }}</td>
+          <td>{{ movie.description }}</td>
+          <td><a href="#" [routerLink]="['/post/', movie._id, 'view']" class="btn btn-info"><i class="fa-solid fa-eye"></i></a></td>
+          <td> <a href="#" [routerLink]="['/post/', movie._id, 'edit']" class="btn btn-primary"><i class="fa-solid fa-pen-to-square"></i></a></td>
+          <td> <button type="button" (click)="deletePost(movie._id)" class="btn btn-danger"><i class="fa-solid fa-trash"></i></button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  </body>

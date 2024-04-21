@@ -1,0 +1,82 @@
+<body>
+<div class="container">
+    <h1>Update Movie</h1>
+    <form [formGroup]="form" (ngSubmit)="submit()">
+  
+      <div class="form-group">
+        <label for="movieName">Movie Name:</label>
+        <input formControlName="movieName" id="movieName" type="text" class="form-control">
+        <div *ngIf="f['movieName'].touched && f['movieName'].invalid" class="alert alert-danger">
+          <div *ngIf="f['movieName'].errors && f['movieName'].errors['required']">Movie Name is required.</div>
+        </div>
+      </div>
+  
+      <div class="form-group">
+        <label for="cast">Cast:</label>
+        <input formControlName="cast" id="cast" type="text" class="form-control">
+        <div *ngIf="f['cast'].touched && f['cast'].invalid" class="alert alert-danger">
+          <div *ngIf="f['cast'].errors && f['cast'].errors['required']">Cast is required.</div>
+        </div>
+      </div>
+  
+      <div class="form-group">
+        <label for="director">Director:</label>
+        <input formControlName="director" id="director" type="text" class="form-control">
+        <div *ngIf="f['director'].touched && f['director'].invalid" class="alert alert-danger">
+          <div *ngIf="f['director'].errors && f['director'].errors['required']">Director is required.</div>
+        </div>
+      </div>
+  
+      <div class="form-group">
+        <label for="releaseDate">Release Date:</label>
+        <input formControlName="releaseDate" id="releaseDate" type="date" class="form-control">
+        <div *ngIf="f['releaseDate'].touched && f['releaseDate'].invalid" class="alert alert-danger">
+          <div *ngIf="f['releaseDate'].errors && f['releaseDate'].errors['required']">Release Date is required.</div>
+        </div>
+      </div>
+  
+      <div class="form-group">
+        <label for="duration">Duration:</label>
+        <input formControlName="duration" id="duration" type="text" class="form-control">
+        <div *ngIf="f['duration'].touched && f['duration'].invalid" class="alert alert-danger">
+          <div *ngIf="f['duration'].errors && f['duration'].errors['required']">Duration is required.</div>
+        </div>
+      </div>
+  
+      <div class="form-group">
+        <label for="songs">Songs:</label>
+        <input formControlName="songs" id="songs" type="text" class="form-control">
+        <div *ngIf="f['songs'].touched && f['songs'].invalid" class="alert alert-danger">
+          <div *ngIf="f['songs'].errors && f['songs'].errors['required']">Songs is required.</div>
+        </div>
+      </div>
+  
+     <!-- <div class="form-group">
+        <label for="poster">Poster:</label>
+        <input formControlName="poster" id="poster" type="file" class="form-control">
+        <div *ngIf="f['poster'].touched && f['poster'].invalid" class="alert alert-danger">
+          <div *ngIf="f['poster'].errors && f['poster'].errors['required']">Poster is required.</div>
+        </div>
+      </div>-->
+  
+      <div class="form-group">
+        <label for="genre">Genre:</label>
+        <input formControlName="genre" id="genre" type="text" class="form-control">
+        <div *ngIf="f['genre'].touched && f['genre'].invalid" class="alert alert-danger">
+          <div *ngIf="f['genre'].errors && f['genre'].errors['required']">Genre is required.</div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="description">Description:</label>
+        <textarea formControlName="description" id="description" type="text" class="form-control"></textarea>
+        <div *ngIf="f['description'].touched && f['description'].invalid" class="alert alert-danger">
+          <div *ngIf="f['description'].errors && f['description'].errors['required']">Description is required.</div>
+        </div>
+      </div>
+  
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+    <a href="#" routerLink="/post/index" class="btn btn-primary">Go Back</a>
+  </div>
+</body>
