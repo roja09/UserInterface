@@ -1,5 +1,7 @@
 const express = require('express');
 const Post = require('../model/Post');
+const Review = require('../model/Review');
+const reviewer = require('../model/user');
 const postRoute = express.Router();
 
 /* Add Post */
@@ -11,8 +13,56 @@ postRoute.post('/posts/create', async (req, res, next) => {
     next(error);
   }
 });
+postRoute.post('/posts/:id/view', async (req, res, next) => {
+  console.log("mongooo");
+  console.log(req.body);
+  try {
+    const review = await Review.create(req.body);
+    console.log("mongooo");
+    console.log(req.body);
+    res.json(review);
+  } catch (error) {
+    next(error);
+  }
+});
+postRoute.post('/posts/signup', async (req, res, next) => {
+  console.log("mongooo");
+  console.log(req.body);
+  try {
+    const user = await reviewer.create(req.body);
+    console.log("mongooo");
+    console.log(req.body);
+    res.json(user);
+  } catch (error) {
+    next(error);
+  }
+});
+
 
 /* Get all Posts*/
+postRoute.get('/posts/:id/view', async (req, res, next) => {
+  try {
+    console.log("try to get all reviewss from mongooo");
+    console.log(req.params.id);
+    const revs = await Review.find({movieId:req.params.id});
+    console.log(revs);
+    res.json(revs);
+  } catch (error) {
+    console.log("error",error);
+    next(error);
+  }
+});
+postRoute.get('/posts/login', async (req, res, next) => {
+  try {
+    console.log("try to get all reviewers from mongooo");
+    const revs = await reviewer.find();
+    console.log(revs);
+    res.json(revs);
+  } catch (error) {
+    console.log("error",error);
+    next(error);
+  }
+});
 postRoute.get('/posts', async (req, res, next) => {
   try {
     const posts = await Post.find();

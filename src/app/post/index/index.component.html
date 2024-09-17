@@ -1,6 +1,5 @@
 <body>
-  <div class="container">
-   <header class="header">
+  <header class="header">
     <nav class="w-full flex  items-center p-5 bg-black header-nav">
       <div class="logo">
         <h1 class="text-gray-200 text-4xl flex justify-start items-center header-title">
@@ -11,11 +10,24 @@
           <span><p class="text-gray-300 text-lg header-subtitle">Your one-stop destination for all movies</p></span>
         </div>
       </div>
+        <div class="search relative">
+          <form [formGroup]="form" (ngSubmit)="SearchMovie()">
+          <div class="form-group">
+            <span class="absolute mt-1.5 mx-3"><i class="fa-solid fa-magnifying-glass"></i></span>
+            <input formControlName="movieName" placeholder="search movie"  type="text" class="form-control w-96 p-2 pl-9 rounded rounded-r-none text-gray-600">
+            <button  class="bg-slate-400 p-2 rounded-r text-white outline-none outline-0 ">Search</button>
+          </div>
+          </form>   
+          </div>
+          <span class="text-xl cursor-pointer text-gray-200 font-bold m-3 hover:underline hover:text-red-600"><a href="#" routerLink="/post/login" class="btn btn-primary">login</a></span>
+          <span class="text-xl cursor-pointer text-gray-200 font-bold m-3 hover:underline hover:text-red-600"> <a href="#" routerLink="/post/signup" class="btn btn-primary">Signup</a></span>
     </nav>
   </header>
-  <div class="con">
+  <div class="container">
+
+  <!--<div class="con">
     <span class="positioned" style="margin-right: 10px;"><a href="#" routerLink="/post/create/" class="btn btn-success"><i class="fa fa-plus" aria-hidden="true"></i>Add Movie</a></span>
-</div> 
+  </div> -->
     <table class="styled-table">
       <thead>
         <tr>
@@ -29,8 +41,8 @@
           <th>Genre</th>
           <th>Description</th>
           <th>View</th>
-          <th>Edit</th>
-          <th>Delete</th>
+          <!--<th>Edit</th>
+          <th>Delete</th>-->
         </tr>
       </thead>
       <tbody>
@@ -45,9 +57,8 @@
           <td>{{ movie.genre }}</td>
           <td>{{ movie.description }}</td>
           <td><a href="#" [routerLink]="['/post/', movie._id, 'view']" class="btn btn-info"><i class="fa-solid fa-eye"></i></a></td>
-          <td> <a href="#" [routerLink]="['/post/', movie._id, 'edit']" class="btn btn-primary"><i class="fa-solid fa-pen-to-square"></i></a></td>
-          <td> <button type="button" (click)="deletePost(movie._id)" class="btn btn-danger"><i class="fa-solid fa-trash"></i></button>
-          </td>
+          <!--<td> <a href="#" [routerLink]="['/post/', movie._id, 'edit']" class="btn btn-primary"><i class="fa-solid fa-pen-to-square"></i></a></td>
+          <td> <button type="button" (click)="deletePost(movie._id)" class="btn btn-danger"><i class="fa-solid fa-trash"></i></button>-->
         </tr>
       </tbody>
     </table>

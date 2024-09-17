@@ -1,39 +1,50 @@
 <body>
+  <header class="header">
+    <nav class="w-full flex  items-center p-5 bg-black header-nav">
+      <div class="logo">
+       <h1 class="text-gray-200 text-4xl flex justify-start items-center header-title">
+          <span class="text-yellow-400">Movie</span>
+          <span>Mania</span>
+        </h1>
+        <div class="nav-items">
+          <span><p class="text-gray-300 text-lg header-subtitle">Your one-stop destination for all movies</p></span>
+        </div>
+      </div>
+      <div class="login-signup">
+        <span class="text-xl cursor-pointer text-gray-200 font-bold m-3 hover:underline hover:text-red-600">Login</span>
+        <span class="text-xl cursor-pointer text-gray-200 font-bold m-3 hover:underline hover:text-red-600">Signup</span>
+      </div>
+    </nav>
+  </header>
   <div class="container">
-    <h1>View Movie Data</h1>
-  
-    <a href="#" routerLink="/post/index" class="btn btn-primary">Back</a>
-  
-
-  
     <div>
       <strong>Movie Name:</strong>
-      <p>{{ post.movieName }}</p>
+      <p>{{ post?.movieName }}</p>
     </div>
   
     <div>
       <strong>Cast:</strong>
-      <p>{{ post.cast }}</p>
+      <p>{{ post?.cast }}</p>
     </div>
   
     <div>
       <strong>Director:</strong>
-      <p>{{ post.director }}</p>
+      <p>{{ post?.director }}</p>
     </div>
   
     <div>
       <strong>Release Date:</strong>
-      <p>{{ post.releaseDate }}</p>
+      <p>{{ post?.releaseDate }}</p>
     </div>
   
     <div>
       <strong>Duration:</strong>
-      <p>{{ post.duration }}</p>
+      <p>{{ post?.duration }}</p>
     </div>
   
     <div>
       <strong>Songs:</strong>
-      <p>{{ post.songs }}</p>
+      <p>{{ post?.songs }}</p>
     </div>
   
     <!--<div>
@@ -43,13 +54,37 @@
   
     <div>
       <strong>Genre:</strong>
-      <p>{{ post.genre }}</p>
+      <p>{{ post?.genre }}</p>
     </div>
 
     <div>
         <strong>Description:</strong>
-        <p>{{ post.description }}</p>
+        <p>{{ post?.description }}</p>
     </div>
-  
+    <div>
+      <strong>Review:</strong>
+      <form [formGroup]="form" (ngSubmit)="submit()">
+        <div class="form-group"></div>
+          <textarea formControlName="review" id="review" type="text" class="form-control"></textarea>
+          <div>
+          <button type="submit">Add Review</button>
+          </div>
+      </form>
+    </div>
   </div>
+  <table class="styled-table">
+    <thead>
+      <tr>
+        <th>Review</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let rev of reviews">
+        <td>{{ rev.content }}</td>
+      </tr>
+    </tbody>
+  </table>
 </body>
+<footer class="w-full fixed bottom-0 bg-gray-500">
+  <span class="text-white h-7 flex mt-4 justify-center items-center">MEAN STACK HASH 2024</span>
+</footer>

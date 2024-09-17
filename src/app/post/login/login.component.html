@@ -1,0 +1,34 @@
+<div class="container">
+    <h1>LOGIN</h1>
+
+        
+    <form [formGroup]="form" (ngSubmit)="submit()">
+        
+
+        <div class="form-group">
+            <label for="name">USERNAME:</label>
+            <input 
+                formControlName="name"
+                id="name" 
+                type="text" 
+                class="form-control">
+            <div *ngIf="f['name'].touched && f['name'].invalid" class="alert alert-danger">
+                <div *ngIf="f['name'].errors && f['name'].errors['required']">Title is required.</div>
+            </div>
+        </div>
+  
+        <div class="form-group">
+            <label for="password">PASSWORD</label>
+            <input 
+                formControlName="password"
+                id="password" 
+                type="password" 
+                class="form-control">
+        
+            <div *ngIf="f['password'].touched && f['password'].invalid" class="alert alert-danger">
+                <div *ngIf="f['password'].errors && f['password'].errors['required']">Body is required.</div>
+            </div>
+        </div>
+        <button class="btn btn-primary" type="submit" [disabled]="!form.valid">Submit</button>
+    </form>
+</div>

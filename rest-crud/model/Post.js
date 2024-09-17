@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const { timestamp } = require('rxjs');
 const Schema = mongoose.Schema;
 
 let Movie = new Schema({
@@ -38,5 +39,6 @@ let Movie = new Schema({
 }, {
   collection: 'movies'
 })
+
 
 module.exports = mongoose.model('Movie', Movie)

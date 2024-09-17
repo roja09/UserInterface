@@ -1,0 +1,33 @@
+<body>
+    <div class="container">
+        <h1>Signup</h1>  
+        <form [formGroup]="form" (ngSubmit)="submit()">
+          <div class="form-group">
+            <label for="name">Name:</label>
+            <input formControlName="name" id="name" type="text" class="form-control">
+            <div *ngIf="f['name'].touched && f['name'].invalid" class="alert alert-danger">
+              <div *ngIf="f['name'].errors && f['name'].errors['required']">Name is required.</div>
+            </div>
+          </div>
+      
+          <div class="form-group">
+            <label for="username">Username:</label>
+            <input formControlName="username" id="username" type="text" class="form-control">
+            <div *ngIf="f['username'].touched && f['username'].invalid" class="alert alert-danger">
+              <div *ngIf="f['username'].errors && f['username'].errors['required']">Cast is required.</div>
+            </div>
+          </div>
+      
+          <div class="form-group">
+            <label for="password">Password:</label>
+            <input formControlName="password" id="password" type="password" class="form-control">
+            <div *ngIf="f['password'].touched && f['password'].invalid" class="alert alert-danger">
+              <div *ngIf="f['password'].errors && f['password'].errors['required']">Director is required.</div>
+            </div>
+          </div>
+      
+          <button class="btn btn-primary" type="submit" [disabled]="form.invalid">Submit</button>
+        </form>
+        <a href="#" routerLink="/post/index" class="btn btn-primary text-yellow-600 ml-2 cursor-pointer ">Go Back</a>
+      </div>
+    </body>
